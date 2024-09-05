@@ -1,0 +1,15 @@
+use('store')
+
+db.products.find()
+
+// make a query with a join of 2 collections
+db.products.aggregate([
+  {
+    $lookup: {
+      from: 'stores', // go to this collection
+      localField: 'products_ids', // where we want to make the reference
+      foreignField: '_id', // we make match with this id
+      as: 'storesArray' // name of information that we show 
+    }
+  }
+])

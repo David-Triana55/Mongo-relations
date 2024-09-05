@@ -1,0 +1,3 @@
+use('store')
+
+db.users.find({}) 

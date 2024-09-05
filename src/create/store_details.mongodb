@@ -1,0 +1,12 @@
+use("store")
+
+// relation one to one embedded stores_details -> manager
+db.stores_details.insertOne({
+  storeId: "ST001",
+  description: 'lorem ipsum dolor sit am',
+  manager: {
+    email: 'tienda1@gmail.com',
+    cellPhone: '123'
+  }
+})
+

@@ -1,0 +1,31 @@
+use("store")
+// relation one to many embedded when use an array to save datas
+db.orders.insertOne({
+  user_id: ObjectId('66d8cd530dfb46d783c670b1'),
+  date: '2020-12-5',
+  total: 0,
+  items: []
+})
+
+
+// how update also increment the total dinamic way
+db.orders.updateOne(
+  {
+    _id: ObjectId('66d9e2a18b7353586ed010d0')
+  },
+  {
+    $push: {
+      items: {
+        name: 'product 1',
+        price: 35,
+        qty: 1,
+        product_id: ObjectId('66d8dcaa19acbc0a5b624f81')
+      }
+    },
+    $inc: {
+      total: 35 * 1
+    }
+  }
+
+)
+

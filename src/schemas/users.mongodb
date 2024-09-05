@@ -1,0 +1,33 @@
+
+db.createCollection('users', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ['email', 'password'],
+      additionalProperties: false,
+      properties: {
+        name: {
+          bsonType: 'string'
+        },
+        last_name: {
+          bsonType: 'string'
+        },
+        email: {
+          bsonType: 'string'
+        },
+        password: {
+          bsonType: 'string',
+          pattern: "^[a-zA-Z0-9]{8,}$"
+        },
+        age: {
+          bsonType: 'number',
+          minimum: 18,
+          maximum: 99
+        },
+        isSingle: {
+          bsonType: 'bool'
+        }
+      }
+    }
+  }
+})

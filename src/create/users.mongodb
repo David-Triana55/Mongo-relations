@@ -1,0 +1,19 @@
+use("store")
+
+// Create users and we have relation one to one embedded. users -> address and shipping_address
+db.users.insertOne({
+  email: "david@gmail.com",
+  password: "david",
+  role: "admin",
+  social_accounts: ['instagram' , 'facebook'],
+  address: {
+    street: 'cra 10',
+    city: 'bogota',
+    zip: '10'
+  },
+  shipping_address: {
+    street: 'cra 10',
+    city: 'bogota',
+    zip: '10'
+  }
+})

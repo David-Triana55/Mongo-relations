@@ -1,0 +1,33 @@
+use('store')
+// insert many products 
+db.products.insertMany([
+  {
+    name: 'product 1',
+    sizes: ['L', 'M'],
+    price: 10,
+  },
+  {
+    name: 'product 2',
+    sizes: ['L'],
+    price: 35,
+  },
+  {
+    name: 'product 3',
+    sizes: ['M'],
+    price: 90
+  }
+])
+
+// find the product by id and update the products_ids with an ObjectId
+db.products.updateOne(
+  {
+    _id: ObjectId('66d8dcaa19acbc0a5b624f80')
+  },
+  {
+    $set: {
+      products_ids: [
+        ObjectId('66d8e002fac3d9f5e71ab4dd')
+      ]
+    }
+  }
+)

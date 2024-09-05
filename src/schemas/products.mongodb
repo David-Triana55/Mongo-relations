@@ -1,0 +1,35 @@
+// this way we make sure that have a schema for the collection products
+db.createCollection('products', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ['name'],
+      properties: {
+        name: {
+          bsonType: 'string'
+        },
+        sizes: {
+          bsonType: 'array',
+          minItems: 1,
+          uniqueItems: true,
+          items: {
+            bsonType: 'string'
+          }
+        },
+        category: {
+          bsonType: 'object',
+          required: ['name'],
+          properties: {
+            name: {
+              bsonType: 'string'
+            },
+            image: {
+              bsonType: 'string'
+            }
+          },
+        }
+      }
+    }
+  }
+})
+

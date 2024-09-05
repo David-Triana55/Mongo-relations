@@ -1,0 +1,26 @@
+use('store')
+
+db.orders.find({})
+db.orders.find({ "items.qty" :3})
+db.orders.find({user_id: ObjectId('66d8d3295714ff907e9eae9d')}).count()
+
+db.orders.aggregate([
+  {
+    // just looking for an object in specific
+    $match: {
+      _id: ObjectId('66d8d3e231be8ba660803264')
+    }
+  },
+  {
+    // make the query found the same objectIds and show the info about 2 collections
+    $lookup: {
+      from: "users",
+      localField: 'user_id',
+      foreignField: '_id',
+      as: 'user'
+    }
+  }
+])
+
+// find an order by ObjectId
+db.orders.findOne({_id: ObjectId('66d9c644061e914c17457cb3')})

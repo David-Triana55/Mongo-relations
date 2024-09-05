@@ -1,0 +1,21 @@
+use("store")
+// relations many to many 
+db.stores.insertOne({
+  name: 'Tienda 1',
+  address: 'cr 494',
+  city: 'bogota',
+  products_ids: [
+      ObjectId('66d8dcaa19acbc0a5b624f80'),
+      ObjectId('66d8dcaa19acbc0a5b624f81'),
+      ObjectId('66d8dcaa19acbc0a5b624f82'),
+    ]
+})
+// insert few objects an array and make the relation many to many
+db.stores.insertOne({
+  name: 'Tienda 2',
+  address: 'cr 49',
+  city: 'cali',
+  products_ids: [
+    ObjectId('66d8dcaa19acbc0a5b624f82')
+  ]
+})
