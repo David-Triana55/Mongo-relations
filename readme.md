@@ -93,7 +93,7 @@ En una relación uno a muchos referenciada, un documento en una colección puede
 
 Imaginemos que tenemos dos colecciones: posts y comments. Cada publicación puede tener múltiples comentarios.
 
-```mongodb
+```js
 // Crear publicación
 const postId = db.posts.insertOne({
   title: "My First Post"
