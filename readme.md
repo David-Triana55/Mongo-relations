@@ -14,7 +14,7 @@ En una relación uno a uno embebida, los datos relacionados se almacenan en un s
 
 Imaginemos que queremos almacenar el perfil de un usuario directamente en el documento del usuario.
 
-```mongodb
+```js
 // Crear un usuario con perfil embebido
 db.users.insertOne({
   name: "John Doe",
@@ -36,7 +36,7 @@ En una relación uno a uno referenciada, un documento en una colección contiene
 
 Imaginemos que tenemos dos colecciones: users y profiles. Cada usuario tiene un perfil asociado
 
-```mongodb
+```js
 // Crear perfil
 const profileId = db.profiles.insertOne({
   age: 30,
@@ -71,7 +71,7 @@ En una relación uno a muchos embebida, un documento en una colección contiene 
 
 Imaginemos que queremos almacenar una lista de comentarios dentro de un documento de publicación.
 
-```mongodb
+```js
 // Crear una publicación con comentarios embebidos
 db.posts.insertOne({
   title: "My First Post",
@@ -126,7 +126,7 @@ En una relación muchos a muchos, se utiliza una colección intermedia para gest
 
 Imaginemos que tenemos dos colecciones: students y courses. Un estudiante puede estar inscrito en múltiples cursos y un curso puede tener múltiples estudiantes.
 
-```mongodb
+```js
 // Crear estudiante y curso
 const studentId = db.students.insertOne({
   name: "Jane Doe"
