@@ -1,12 +1,14 @@
-Claro, aquí tienes ejemplos de los métodos de ordenamiento en C++ sin usar la biblioteca estándar (`<vector>` y `<algorithm>`), utilizando arreglos simples.
-
----
 
 # Métodos de Ordenamiento en C++ (sin usar bibliotecas estándar)
 
 ## 1. Ordenamiento por Inserción
 
 **Definición:** El algoritmo de ordenamiento por inserción construye el arreglo ordenado uno a uno, colocando cada elemento en su posición correcta.
+
+**Sintaxis/Estructura:**
+- Iterar desde el segundo elemento hasta el último.
+- Tomar el elemento actual y compararlo con los elementos anteriores.
+- Desplazar los elementos mayores a la derecha para insertar el elemento en la posición correcta.
 
 **Código:**
 
@@ -39,6 +41,11 @@ int main() {
 ## 2. Ordenamiento por Selección
 
 **Definición:** El algoritmo de ordenamiento por selección encuentra el elemento mínimo (o máximo) y lo coloca en la primera posición, luego repite el proceso para el resto del arreglo.
+
+**Sintaxis/Estructura:**
+- Iterar sobre todo el arreglo y encontrar el índice del elemento mínimo.
+- Intercambiar el elemento mínimo encontrado con el primer elemento no ordenado.
+- Repetir para el resto del arreglo.
 
 **Código:**
 
@@ -76,6 +83,11 @@ int main() {
 
 **Definición:** El algoritmo de ordenamiento por burbujeo compara pares de elementos adyacentes y los intercambia si están en el orden incorrecto.
 
+**Sintaxis/Estructura:**
+- Comparar elementos adyacentes.
+- Intercambiar si el elemento de la izquierda es mayor que el de la derecha.
+- Repetir hasta que el arreglo esté ordenado.
+
 **Código:**
 
 ```cpp
@@ -106,7 +118,12 @@ int main() {
 
 ## 4. Ordenamiento por Shell
 
-**Definición:** El algoritmo de ordenamiento por Shell es una generalización del ordenamiento por inserción que permite intercambiar elementos distantes.
+**Definición:** El algoritmo de ordenamiento por Shell es una generalización del ordenamiento por inserción que permite intercambiar elementos distantes para mejorar la eficiencia.
+
+**Sintaxis/Estructura:**
+- Dividir el arreglo en subarreglos usando un intervalo (gap).
+- Ordenar los subarreglos usando el algoritmo de inserción.
+- Reducir el intervalo y repetir hasta que el intervalo sea 1.
 
 **Código:**
 
@@ -139,7 +156,12 @@ int main() {
 
 ## 5. Quick Sort
 
-**Definición:** El algoritmo Quick Sort utiliza la técnica de "divide y vencerás" seleccionando un pivote y particionando el arreglo en dos subvectores.
+**Definición:** El algoritmo Quick Sort utiliza la técnica de "divide y vencerás" seleccionando un pivote y particionando el arreglo en dos subvectores que se ordenan recursivamente.
+
+**Sintaxis/Estructura:**
+- Elegir un pivote.
+- Particionar el arreglo en dos partes: menores que el pivote y mayores que el pivote.
+- Ordenar recursivamente las dos particiones.
 
 **Código:**
 
@@ -185,6 +207,11 @@ int main() {
 ## 6. Ordenamiento por Fusión
 
 **Definición:** El algoritmo de ordenamiento por fusión divide el arreglo en mitades, las ordena recursivamente y luego fusiona las mitades ordenadas.
+
+**Sintaxis/Estructura:**
+- Dividir el arreglo en dos mitades.
+- Ordenar cada mitad recursivamente.
+- Fusionar las dos mitades ordenadas en un arreglo ordenado.
 
 **Código:**
 
@@ -240,8 +267,11 @@ void mergeSort(int arr[], int l, int r) {
 int main() {
     int arr[] = {12, 11, 13, 5, 6, 7};
     int n = sizeof(arr) / sizeof(arr[0]);
-    mergeSort(arr, 0, n - 1);
+    mergeSort(arr, 0,
+
+ n - 1);
     for (int i = 0; i < n; ++i) cout << arr[i] << " ";
     return 0;
 }
 ```
+
