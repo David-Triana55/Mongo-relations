@@ -1,5 +1,5 @@
 
-# Métodos de Ordenamiento en C++ (sin usar bibliotecas estándar)
+# Métodos de Ordenamiento en C++
 
 ## 1. Ordenamiento por Inserción
 
